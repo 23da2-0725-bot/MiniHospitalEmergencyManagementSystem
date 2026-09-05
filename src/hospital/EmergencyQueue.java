@@ -38,11 +38,11 @@ public class EmergencyQueue {
         rear = newNode;
     }
 
-    // Dequeue - Remove the next patient
+    // Dequeue - Remove the next patient for treatment (FIFO)
     public Patient dequeue() {
 
         if (front == null) {
-            System.out.println("Queue is empty.");
+            System.out.println("No patients waiting in the emergency queue.");
             return null;
         }
 
@@ -61,7 +61,7 @@ public class EmergencyQueue {
     public void displayQueue() {
 
         if (front == null) {
-            System.out.println("No patients are waiting.");
+            System.out.println("No patients are currently waiting in the queue.");
             return;
         }
 
