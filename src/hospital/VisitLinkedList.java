@@ -4,6 +4,7 @@ public class VisitLinkedList {
 
     private VisitNode head;
 
+    // Add a new visit to the end of the patient's visit history
     public void addVisit(Visit visit) {
 
         VisitNode newNode = new VisitNode(visit);
@@ -22,6 +23,7 @@ public class VisitLinkedList {
         }
     }
 
+    // Display the patient's full visit history
     public void displayVisits() {
 
         if (head == null) {
@@ -36,8 +38,10 @@ public class VisitLinkedList {
             System.out.println("-----------------------------");
             current = current.next;
         }
+
     }
- // Remove a visit using Visit ID
+
+    // Remove a visit using Visit ID
     public void removeVisit(int visitId) {
 
         if (head == null) {
@@ -89,6 +93,8 @@ public class VisitLinkedList {
 
             current = current.next;
         }
+
+        System.out.println("Visit ID " + visitId + " not found in visit history.");
 
         return null;
     }
