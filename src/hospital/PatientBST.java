@@ -10,6 +10,12 @@ public class PatientBST {
     // ==========================================
     public void insert(Patient patient) {
 
+        // Prevent inserting a duplicate Patient ID
+        if (search(patient.patientId) != null) {
+            System.out.println("Patient ID " + patient.patientId + " already exists. Insert cancelled.");
+            return;
+        }
+
         PatientNode newNode = new PatientNode(patient);
 
         // If the tree is empty
@@ -78,6 +84,11 @@ public class PatientBST {
     // DELETE PATIENT
     // ==========================================
     public void delete(int patientId) {
+
+        if (search(patientId) == null) {
+            System.out.println("Patient ID " + patientId + " not found. Nothing to delete.");
+            return;
+        }
 
         root = deleteNode(root, patientId);
     }
