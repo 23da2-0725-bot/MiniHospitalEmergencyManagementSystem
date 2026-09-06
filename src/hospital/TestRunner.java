@@ -107,7 +107,7 @@ public class TestRunner {
         VisitLinkedList history = new VisitLinkedList();
 
         history.addVisit(new Visit(1, "2026-09-01", "Dr. Test", "Checkup", "Rest"));
-        history.addVisit(new Visit(2, "2026-10-01", "Dr. Test", "Follow-up", "Medication"));
+        history.addVisit(new Visit(2, "2026--01", "Dr. Test", "Follow-up", "Medication"));
 
         check("Search finds existing visit", history.searchVisit(1) != null);
         check("Search returns null for missing visit", history.searchVisit(999) == null);
